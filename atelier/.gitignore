@@ -1,2 +1,4 @@
 venv/
 data/*.parquet
+data/scrapping/*.parquet
+data/ingestion/*.parquet
