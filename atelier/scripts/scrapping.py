@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import os
 
+
 from datetime import datetime
 
 #		URL : https://www.bordeaux-tourisme.com/ville-patrimoine/sites-monuments.html

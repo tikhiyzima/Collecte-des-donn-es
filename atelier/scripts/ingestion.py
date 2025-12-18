@@ -23,6 +23,7 @@ df_ubb.to_parquet (os.path.join (uri_data , f"matchs_ubb_{date}.parquet") , inde
 #		travaux rocade
 url_travaux = 'https://datahub.bordeaux-metropole.fr/api/explore/v2.1/catalog/datasets/ci_chantier/records'
 
+
 # 		lecture des données 
 data_travaux = requests.get (url_travaux).json () ['results']
 df_travaux = pd.DataFrame (data_travaux)
