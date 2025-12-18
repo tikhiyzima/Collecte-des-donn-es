@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import os
+
 from datetime import datetime
 
 #		URL : https://www.bordeaux-tourisme.com/ville-patrimoine/sites-monuments.html
@@ -35,6 +37,8 @@ from datetime import datetime
 #		</div>
 
 
+date = datetime.now ().strftime ("%Y-%m-%d")
+uri_data = os.path.join (os.path.dirname (os.path.dirname (os.path.abspath (__file__))) , "data" , "scrapping") 
 url = "https://www.bordeaux-tourisme.com/ville-patrimoine/sites-monuments.html"
 headers = {
 	#		faux user agent 
@@ -53,10 +57,22 @@ scope_el = raw.select ('.ListSit-item.js-list-sit-item')
 #		object avec les données 
 result = [ ]
 for el in scope_el : 
-	title = el.select_one ('.Card-title').text.strip ()
-    label = el.select_one ('.Card-label').text.strip ()
-    
-	result.append ({
-        "nom" : title ,
-        "categorie" : label
-    })
+	title_el = el.select_one ('.Card-title') 
+	label_el = el.select_one ('.Card-label') 
+	if title_el and label_el :
+		result.append ({
+			"nom" : title_el.text.strip () ,
+			"categ" : label_el.text.strip () ,
+		})
+
+#		print (result) 
+
+
+# 		stockage 
+df = pd.DataFrame (result)
+
+
+df.to_parquet (os.path.join (uri_data , f"bordeaux_{date}.parquet") , index=False)
+
+
+print ("traitement terminé : fichiers parquet générés")

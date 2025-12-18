@@ -1,6 +1,6 @@
-## ATELIER 1  
+# ATELIER 1 :  
 #   
-# Etape 1   
+## Etape 1   
 établir une liste des facteurs influant plus ou moins directement sur le trafic  
 routier de la rocade bordelaise. En déduire une liste par ordre décroissant d’importance de ces facteurs.  
   
@@ -12,7 +12,7 @@ routier de la rocade bordelaise. En déduire une liste par ordre décroissant d�
 - Grèves  
   
   
-# Étape 2  
+## Étape 2  
 Pour les informations de trafic ainsi que chaque facteur identifié dans l’étape précédente, proposer une source  
 de données gratuite (Open Data, ...). Préciser également si un travail spécifique (recoupement, analyse, ...) et  
 ou des ressources (application, stockage, ...) sont nécessaires pour l’exploitation de ces données.  
@@ -38,9 +38,24 @@ données de référence ( perturbations traffic )
 - Grèves :  aucun jeu de données     
 -   
   
-# Étape 3  
+## Étape 3  
 Ecrire un ou plusieurs scripts python consistant à :  
 - lire ces données  
 - les stocker au format parquet  
-- nommer le-s fichier-s en incluant la date  
+- nommer les fichiers en incluant la date  
   
+
+
+# ATELIER 2 :
+#
+## Étape 1 
+Préciser les limites que vous vous imposerez au niveau du scraping pour restreindre le risque de poursuite
+juridique de la part du site.
+
+- ne pas publier les données scrappées sur github ( ou publiquement )
+- mettre un délais pour ne pas saturer les serveurs 
+- ne pas vendre les données 
+
+## Étape 2
+
+## Étape 3

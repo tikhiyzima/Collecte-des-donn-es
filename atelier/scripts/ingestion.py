@@ -1,11 +1,11 @@
 import pandas as pd
 import requests
 from datetime import datetime
+import os
 
 
 date = datetime.now ().strftime ("%Y-%m-%d")
-
-
+uri_data = os.path.join (os.path.dirname (os.path.dirname (os.path.abspath (__file__))) , "data" , "ingestion") 
 
 #		événements : match UBB
 url_ubb = 'https://datahub.bordeaux-metropole.fr/api/explore/v2.1/catalog/datasets/met_agenda/records?select=*&where=(keywords_fr%20%3D%20%22UBB%22%20OR%20keywords_fr%20%3D%20%22Rugby%22)'
@@ -15,7 +15,7 @@ data_ubb = requests.get (url_ubb).json () ['results']
 df_ubb = pd.DataFrame (data_ubb)
 
 #		stockage
-df_ubb.to_parquet (f"/data/ingestion/matchs_ubb_{date}.parquet" , index=False)
+df_ubb.to_parquet (os.path.join (uri_data , f"matchs_ubb_{date}.parquet") , index=False)
 
 
 
@@ -34,6 +34,6 @@ if 'geo_point_2d' in df_travaux.columns:
     df_travaux ['geo_point_2d'] = df_travaux ['geo_point_2d'].astype (str)
 
 # 		stockage
-df_travaux.to_parquet(f"/data/ingestion/travaux_rocade_{date}.parquet" , index=False)
+df_travaux.to_parquet (os.path.join (uri_data , f"travaux_rocade_{date}.parquet") , index=False)
 
 print ("traitement terminé : fichiers parquet générés")
