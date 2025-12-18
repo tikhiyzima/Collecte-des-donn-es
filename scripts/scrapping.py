@@ -6,7 +6,7 @@ import os
 
 from datetime import datetime
 
-#		URL : https://www.bordeaux-tourisme.com/ville-patrimoine/sites-monuments.html
+#		URL : https://www.tourisme.example/ville-patrimoine/sites-monuments.html
 #		liste des sites et monuments en gironde 
 
 
@@ -14,7 +14,7 @@ from datetime import datetime
 #		.ListSit-item.js-list-sit-item
 
 #		<div class="ListSit-item js-list-sit-item" data-id="2864">
-#			<a href="https://www.bordeaux-tourisme.com/patrimoine-culturel/darwin-caserne-niel.html" class="Card  isLeaf">
+#			<a href="https://www.tourisme.example/patrimoine-culturel/darwin-caserne-niel.html" class="Card  isLeaf">
 #							<div class="Card-durable">
 #						<svg>
 #							<use xlink:href="/themes/bordeaux_tourisme/assets/img/symbols.svg#leaf"></use>
@@ -40,7 +40,7 @@ from datetime import datetime
 
 date = datetime.now ().strftime ("%Y-%m-%d")
 uri_data = os.path.join (os.path.dirname (os.path.dirname (os.path.abspath (__file__))) , "data" , "scrapping") 
-url = "https://www.bordeaux-tourisme.com/ville-patrimoine/sites-monuments.html"
+url = "https://www.tourisme.example/ville-patrimoine/sites-monuments.html"
 headers = {
 	#		faux user agent 
 	'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
