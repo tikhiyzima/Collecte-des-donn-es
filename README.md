@@ -59,3 +59,8 @@ juridique de la part du site.
 ## Étape 2
 
 ## Étape 3
+
+
+# ATELIER 3 :  
+#
+![diagramme](diagram.png)
