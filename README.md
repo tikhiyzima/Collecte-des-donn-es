@@ -56,10 +56,6 @@ juridique de la part du site.
 - mettre un délais pour ne pas saturer les serveurs 
 - ne pas vendre les données 
 
-## Étape 2
-
-## Étape 3
-
 
 # ATELIER 3 :  
 #
